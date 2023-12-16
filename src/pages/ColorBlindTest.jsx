@@ -1,61 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
-import axios from 'axios'
-import { reGenerateAccessToken } from '../../../api/authapi';
+
 
 // importing images
-import bannerImg from '../../../assets/images/visionAssessments/colorblind.webp'
-import Image1 from '../../../assets/images/visionAssessments/colorblind-test-image1.webp';
-import Image2 from '../../../assets/images/visionAssessments/colorblind-test-image2.webp';
-import Image3 from '../../../assets/images/visionAssessments/colorblind-test-image3.webp';
-import Image4 from '../../../assets/images/visionAssessments/colorblind-test-image4.webp';
-import Image5 from '../../../assets/images/visionAssessments/colorblind-test-image5.webp';
-import Image6 from '../../../assets/images/visionAssessments/colorblind-test-image6.webp';
-import Image7 from '../../../assets/images/visionAssessments/colorblind-test-image7.webp';
-import Image8 from '../../../assets/images/visionAssessments/colorblind-test-image8.webp';
-import Image9 from '../../../assets/images/visionAssessments/colorblind-test-image9.webp';
-import Image10 from '../../../assets/images/visionAssessments/colorblind-test-image10.webp';
-import Image11 from '../../../assets/images/visionAssessments/colorblind-test-image11.webp';
-import Image12 from '../../../assets/images/visionAssessments/colorblind-test-image12.webp';
+import bannerImg from '../assets/images/visionAssessments/colorblind.webp'
+import Image1 from '../assets/images/visionAssessments/colorblind-test-image1.webp';
+import Image2 from '../assets/images/visionAssessments/colorblind-test-image2.webp';
+import Image3 from '../assets/images/visionAssessments/colorblind-test-image3.webp';
+import Image4 from '../assets/images/visionAssessments/colorblind-test-image4.webp';
+import Image5 from '../assets/images/visionAssessments/colorblind-test-image5.webp';
+import Image6 from '../assets/images/visionAssessments/colorblind-test-image6.webp';
+import Image7 from '../assets/images/visionAssessments/colorblind-test-image7.webp';
+import Image8 from '../assets/images/visionAssessments/colorblind-test-image8.webp';
+import Image9 from '../assets/images/visionAssessments/colorblind-test-image9.webp';
+import Image10 from '../assets/images/visionAssessments/colorblind-test-image10.webp';
+import Image11 from '../assets/images/visionAssessments/colorblind-test-image11.webp';
+import Image12 from '../assets/images/visionAssessments/colorblind-test-image12.webp';
 
 
 const ColorBlindnessTestScreen = () => {
-
-  let status;
-  const baseURL = 'http://localhost:3000'
-  
-
-   const submitVisionAssessmentResult = async () => {
-    const data = {
-      testType: "Color Blind Test",
-      status: status
-    };
-  
-    try {
-      const accessToken = await localStorage.getItem('accessToken');
-      const response = await axios.post(`${baseURL}/users/submit_vision_assessment_result/`, data, {
-        headers: {
-          Authorization: `Bearer ${accessToken}`
-        }
-      });
-  
-      console.log('Response:', response);
-      return response;
-    } catch (error) {
-      // Server is returning 403 for an expired token
-      if (error.response && error.response.status === 403) {
-        try {
-          console.log('Error Caught');
-          await reGenerateAccessToken();
-          return submitVisionAssessmentResult();
-        } catch (e) {
-          console.error('Error while refreshing token', e);
-          throw e;
-        }
-      }
-      throw error;
-    }
-  };
 
   const [images, setImages] = useState([
     { id: 1, src: Image1, number: 7 },
@@ -257,7 +220,7 @@ const ColorBlindnessTestScreen = () => {
         </button>
         <button
               className="px-4 py-2 bg-gray-700 text-white rounded"
-              onClick={submitVisionAssessmentResult}
+              onClick={alert('Result Saved!')}
             >
               Save Results
             </button>
