@@ -19,6 +19,7 @@ import Image12 from '../assets/images/visionAssessments/colorblind-test-image12.
 
 
 const ColorBlindnessTestScreen = () => {
+  
 
   const [images, setImages] = useState([
     { id: 1, src: Image1, number: 7 },
@@ -220,7 +221,7 @@ const ColorBlindnessTestScreen = () => {
         </button>
         <button
               className="px-4 py-2 bg-gray-700 text-white rounded"
-              onClick={alert('Result Saved!')}
+              onClick={() => alert('Result Saved!')}
             >
               Save Results
             </button>

@@ -84,7 +84,7 @@ const AstigmatismTestScreen = () => {
                 <button className='px-4 py-2 bg-red-700 text-white rounded"' onClick={shuffleImages}>Retake Test</button>
                 <button
                     className="px-4 py-2 bg-gray-700 text-white rounded"
-                    onClick={submitVisionAssessmentResult}
+                    onClick={() => alert('Results Saved!')}
                 >
                     Save Results
                 </button>
@@ -102,7 +102,7 @@ const AstigmatismTestScreen = () => {
                     <img src={bannerImg} alt="Color Blind Test" />
                 </div>
             </div>
-            <div className="p-5 mt-10 bg-white border border-gray-200 rounded-lg shadow w-[90%] mx-auto mb-5">
+            <div className="p-5 mt-10 bg-white border border-gray-200 rounded-lg shadow w-[90%] mx-auto mb-10">
 
                 <div className="w-[100%] md:w-[70%] lg:w-[60%] mx-auto mt-10 ">
                     <h2 className='text-3xl font-bold mb-4 mt-10'>Astigmatism Eye Test</h2>

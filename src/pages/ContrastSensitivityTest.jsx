@@ -152,7 +152,7 @@ const ContrastSensitivityTestScreen = () => {
                             <button className=' px-4 py-2 bg-red-700 text-white rounded' onClick={handleReset}>Restart Test</button>
                             <button
                                 className="px-4 py-2 bg-gray-700 text-white rounded"
-                                onClick={alert('Results Saved!')}
+                                onClick={() => alert('Results Saved!')}
                             >
                                 Save Results
                             </button>

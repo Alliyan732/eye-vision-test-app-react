@@ -215,7 +215,7 @@ Before you start the online eye test, please remove any prescription glasses or 
             
             <button
               className="px-4 py-2 bg-gray-700 text-white rounded"
-              onClick={alert('Results Saved!')}
+              onClick={() => alert('Results Saved!')}
             >
               Save Results
             </button>
