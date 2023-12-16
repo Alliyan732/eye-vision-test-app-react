@@ -33,7 +33,7 @@ The Vision Assessment App is a web application developed in React Native that ai
 4. Run the server:
    ```bash
    npm start
-  ```
+   ```
 
 ## Usage
 
